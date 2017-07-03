@@ -8,5 +8,4 @@ env git clone --depth=1 https://github.com/Meh-Dotfiles/vim.git $VIM || {
 
 
 ln -sfv $VIM/vimrc ~/.vimrc
-ln -sfv $VIM/vim ~/.vim
-
+ln -sfv $VIM/.vim ~/

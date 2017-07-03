@@ -1,7 +1,6 @@
 #!/bin/bash
-cd /tmp
-env git clone https://github.com/Meh-Dotfiles/vim.git
-cd /tmp/vim
-./configure-vim.sh
-cd
-rm -rf /tmp/vim
+
+env git clone --depth=1 https://github.com/Meh-Dotfiles/vim.git $VIM || {
+    printf "Error: git clone of vim repo failed\n"
+        exit 1
+ }

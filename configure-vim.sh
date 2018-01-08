@@ -10,3 +10,6 @@ if [ -d ~/.vimrc ]; then
 fi
 ln -sfv $VIM/vimrc ~/.vimrc
 ln -sfv $VIM/.vim ~/
+
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim

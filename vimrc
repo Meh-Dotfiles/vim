@@ -13,15 +13,15 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'nvie/vim-flake8'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,7 +34,9 @@ set nu
 map <F2> :NERDTreeToggle<cr>
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-:set clipboard^=unnamed
+set clipboard^=unnamed
+set ttymouse=xterm2
+set mouse=a
 
 " Encoding
 set encoding=utf-8
@@ -56,30 +58,24 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Indentation for python (.py files)
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 	|
-    \ set softtabstop=4	|
-    \ set shiftwidth=4	|
-    \ set textwidth=79	|
-    \ set expandtab		|
-    \ set autoindent	|
-    \ set fileformat=unix |
 
-" Indentation for JS, HTML & CSS
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2	|
-    \ set softtabstop=2	|
-    \ set shiftwidth=2	|
+"replace selection, uses buffer h
+vnoremap <C-r> "hy:%s/<C-r>h/<C-r>h/g<left><left>
+
+set tabstop=4
+set softtabstop=4	
+set shiftwidth=4
+set textwidth=79
+set expandtab
+set fileformat=unix
 
 
 " OLD conf
 set nobackup
 set noswapfile
 set pastetoggle=<F2>
-set mouse=a
 
-let g:miniBufExplModSelTarget = 1
+let g:miniBufExplModSelTarget = 2
 let g:miniBufExplorerMoreThanOne = 0
 let g:miniBufExplModSelTarget = 0
 let g:miniBufExplUseSingleClick = 1
@@ -87,13 +83,24 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplVSplit = 25
 let g:miniBufExplSplitBelow=1
 
+"Color 
+syntax enable
+set background=dark
+colorscheme solarized
 
 
+"colorscheme base16-default-dark
 "Error en las mayusculas
+:command W w
+:command Q q
 :command WQ wq
 :command Wq wq
 :command Wqa wqa
 :command WQa wqa
 :command WQA wqa
-:command W w
-:command Q q
+
+
+
+
+
+
